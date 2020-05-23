@@ -31,5 +31,6 @@ def index():
 
 			palavr_text = [ p for p in texto_tokenizado if tirar_pont.match(p)]
 			no_stop_words = [ p for p in palavr_text if p.lower() not in stopwords]
-			return stopwords
+
+			return render_template('index.html', erros=no_stop_words)
 	return render_template('index.html', erros=erros)
