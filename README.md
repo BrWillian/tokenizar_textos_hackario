@@ -3,12 +3,12 @@ Hackario - Inevitable
 
 Participantes
 
-https://github.com/victorengprod
-https://github.com/BrunoZanella
-https://github.com/dandanzzzz
-https://github.com/Omaroweis
-https://github.com/BrWillian
+<p>https://github.com/victorengprod
+<p>https://github.com/BrunoZanella
+<p>https://github.com/dandanzzzz
+<p>https://github.com/Omaroweis
+<p>https://github.com/BrWillian
 
 
 link deploy teste da aplicação
-http://13.82.133.66:5000/
+<p>http://13.82.133.66:5000/
