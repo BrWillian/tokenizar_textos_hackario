@@ -5,6 +5,8 @@ import re
 from bs4 import BeautifulSoup
 import nltk
 from app.controllers.stop import stopwords
+from collections import Counter
+import operator
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
@@ -14,6 +16,7 @@ def index():
 		try:
 			url = request.form['url']
 			resposta = requests.get(url)
+			print(resposta)
 		except:
 			erros.append(
 				"Não foi possivel acessar a url especificada, Por favor entre com uma url valida!"
@@ -32,5 +35,15 @@ def index():
 			palavr_text = [ p for p in texto_tokenizado if tirar_pont.match(p)]
 			no_stop_words = [ p for p in palavr_text if p.lower() not in stopwords]
 
-			return render_template('index.html', erros=no_stop_words)
-	return render_template('index.html', erros=erros)
+			no_stop_words_count = Counter(no_stop_words)
+
+			#print(no_stop_words_count.keys())
+
+			results = sorted(
+                no_stop_words_count.items(),
+                key=operator.itemgetter(1),
+                reverse=True
+            )
+
+			return render_template('result.html', text=no_stop_words_count.keys())
+	return render_template('index.html', text=erros)

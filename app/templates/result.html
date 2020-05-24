@@ -19,7 +19,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="index.html">
+            <a class="navbar-brand page-scroll" href="/">
                 <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" width="160" height="28">
             </a>
         </div>
@@ -35,29 +35,10 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 text-center">
-                <h1>QuickFunnel<br></h1>
-                <h1>Filtre, descubra, conheça.<br></h1>
-                <h4>Categorizar aulas e aprendizado para os usuários através de uma interface acessível e intuitiva durante esse período de distanciamento e educação prejudicada.</h4>
-                <div class="domain-form-holder">
-                    <form role="form" method='POST' action='/'>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-xs-12 col-md-9 domain-text-holder">
-                                    <input id="domain-text" class="domain-text" type="text" name="url" />
-                                </div>
-                                <div class="col-xs-12 col-md-3 btn-go-holder">
-                                    <input class="btn-go" type="submit" name="submit" value="go" />
-                                </div>
-                                {% for error in erros %}
-                                    <h4>'{{ error }}',
-                                {% endfor %}
-                                <div>
-                                   <img src="{{url_for('static', filename='images/image2.png')}}" class="img-right" width="500" height="800"> 
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                <h1>Palavras Chaves<br></h1>
+                {% for word in text %}
+                    <h5>'{{ word }}',
+                {% endfor %}
             </div>
         </div>
     </div>
