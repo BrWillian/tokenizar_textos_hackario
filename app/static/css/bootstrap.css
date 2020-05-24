@@ -1619,6 +1619,7 @@ h4 {
 h5 {
 	font-size: 18px;
 	display: inline-block;
+	padding-left: 2px;
 }
 
 .h6,

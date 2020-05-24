@@ -184,6 +184,9 @@
   margin-top: -80%;
   background: no-repeat;
 }
+.text-align-left {
+    text-align: left;
+}
 .btn-go{
     display: inline-block;
     font-family: 'Montserrat-SemiBold', sans-serif;
